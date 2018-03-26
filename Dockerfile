@@ -19,5 +19,7 @@ RUN npm install
 ENV PORT=8080
 EXPOSE ${PORT}
 
+ADD SafeHouse/ /cesium/SafeHouse/
+
 CMD node server.js --port ${PORT} --public
 
