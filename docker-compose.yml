@@ -12,8 +12,8 @@ services:
     image: sofwerx/cesium
     container_name: cesium
     hostname: cesium
-    volumes:
-      - ./AgileMeridian:/cesium/AgileMeridian
+#    volumes:
+#      - ./AgileMeridian:/cesium/AgileMeridian
     ports:
       - 8088:8088
 
