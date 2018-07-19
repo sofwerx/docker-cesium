@@ -1,5 +1,5 @@
 
-    var datafile = '/AgileMeridian/edges.json';
+    var datafile = '/AgileMeridian/edges2.json';
 
     Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4NGJiNTUwMy0wMDU5LTQ0MzMtODM2NS0xNjM4ZDZmMGJkYjgiLCJpZCI6MjE5MywiaWF0IjoxNTMxOTQ4NTM0fQ.74ujs8JSOZnbRJbLhf2RtrrFQyTZ5tQ7yA0xA1xqTw0';
 
@@ -50,12 +50,12 @@ loadJSON(function(response) {
         var c = Cesium.Color.GREEN;
         var ol = Cesium.Color.DARKGREEN;
 
-        if (pts[i]._source.location.speed < 20.0) {
-	    c = Cesium.color.RED;
-	    ol = Cesium.color.DARKRED;
-        } else if (pts[i]._source.location.speed < 35.0) {
-            c = Cesium.color.ORANGE;
-            ol = Cesium.color.DARKORANGE;
+        if (pts[i]._source.location.speed < 10.0) {
+	    c = Cesium.Color.RED;
+	    ol = Cesium.Color.DARKRED;
+        } else if (pts[i]._source.location.speed < 20.0) {
+            c = Cesium.Color.ORANGE;
+            ol = Cesium.Color.DARKORANGE;
         }
 
         dot = viewer.entities.add({
