@@ -17,3 +17,19 @@ services:
     ports:
       - 8088:8088
 
+
+  cesium-local:
+    build:
+      context: .
+      args:
+        CESIUM_VERSION: 1.47
+        PORT: 8088
+      dockerfile: Dockerfile-local
+    image: sofwerx/cesium
+    container_name: cesium
+    hostname: cesium
+    volumes:
+      - ./AgileMeridian:/cesium/AgileMeridian
+    ports:
+      - 8088:8088
+
