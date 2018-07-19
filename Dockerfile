@@ -3,8 +3,9 @@ FROM node:9.9.0-stretch
 RUN apt-get update
 RUN apt-get install -y git curl unzip
 
-ARG CESIUM_VERSION
-ENV CESIUM_VERSION=${CESIUM_VERSION}
+#ARG CESIUM_VERSION
+#ENV CESIUM_VERSION=${CESIUM_VERSION}
+ENV CESIUM_VERSION=1.47
 
 RUN curl -sLo /tmp/cesium.zip https://github.com/AnalyticalGraphicsInc/cesium/releases/download/${CESIUM_VERSION}/Cesium-${CESIUM_VERSION}.zip && \
     mkdir /cesium && \
@@ -16,11 +17,11 @@ WORKDIR /cesium/
 
 RUN npm install
 
-ENV PORT=8080
+ENV PORT=8088
 EXPOSE ${PORT}
 
-ADD SafeHouse/ /cesium/SafeHouse/
-ADD AgileMeridian/ /cesium/AgileMeridian/
+#ADD SafeHouse/ /cesium/SafeHouse/
+#ADD AgileMeridian/ /cesium/AgileMeridian/
 
 CMD node server.js --port ${PORT} --public
 
